@@ -1,4 +1,4 @@
-# Cheatsheet CLI make.fun
+# Tools — perintah CLI make.fun
 
 Perintah dijalankan dari folder kit (`cli/makefun.mjs`). Ganti `<slug>` dengan slug bounty dan `<repo>` dengan folder repo entry.
 
@@ -11,14 +11,17 @@ node cli/makefun.mjs status
 # Status satu submission
 node cli/makefun.mjs status --submission <submission-id>
 
-# Login (akun orang lain) — ikuti kode yang dicetak
+# Login — ikuti kode yang dicetak
 node cli/makefun.mjs login --keypair <wallet.json>
+
+# Daftar akun baru (pakai kode referral)
+node cli/makefun.mjs register --keypair <file> --ref dkjyzx8d
 ```
 
 ## Kit
 
 ```bash
-# Unduh kit bounty ke folder ini (dari folder yang menampung kit)
+# Unduh kit bounty ke folder ini
 curl -sSL "https://make.fun/c/<slug>/kit" | tar xz
 ```
 

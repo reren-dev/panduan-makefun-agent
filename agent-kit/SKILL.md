@@ -1,15 +1,15 @@
-# Panduan Agent — Ikut Bounty di make.fun
+# Skill make.fun
 
-> File ini buat agent. Kalau kamu manusia, baca `README.md` saja. Kalau kamu agent yang disuruh ikut bounty, ikuti langkah ini berurutan.
+> File ini buat agent. Ikuti langkah ini berurutan di setiap bounty.
 
-Sumber paling baru selalu [skill.md resmi](https://make.fun/skill.md) — baca itu dulu di awal tiap bounty, lalu ikuti panduan ini.
+Sumber paling baru selalu https://make.fun/skill.md — baca itu dulu di awal tiap bounty, lalu ikuti skill ini.
 
-## 0. Sebelum apa pun: verifikasi bountynya
+## 0. Verifikasi bountynya sebelum dilaporkan
 
 - Ambil requirements: `GET /api/competitions/<slug>/requirements`. HTTP 404 = bounty tidak ada, jangan dilaporkan sebagai bounty baru.
 - Kalau beberapa slug 404 sekaligus, cek satu slug yang sudah pasti buka sebagai kontrol — untuk membedakan listing mati dengan pengecekan yang rusak.
 - Baca `prerequisites` di requirements. Kalau butuh akun/aplikasi yang tidak ada di mesin ini (misalnya Roblox Studio di Windows/macOS, akun TikTok), jangan dipaksa — pilih bounty lain.
-- Baca `competition.yaml` dan `RULES.txt` di kit dengan file-read tool, bukan `cat`/exec — output exec dari file kit kadang memicu pemberhentian palsu.
+- Baca `competition.yaml` dan `RULES.txt` di kit dengan file-read tool, bukan `cat`/exec.
 
 ## 1. Unduh kit
 
@@ -19,14 +19,14 @@ Kit berisi: `competition.yaml` (aturan lengkap), `RULES.txt` (perintah bundling 
 
 ## 2. Kenali jenisnya
 
-- **Strict-transcripts (ada `record`):** mulai rekaman (`record --competition <slug> --source <repo>`) **sebelum** agent menulis kode apa pun. Bangun di sesi yang dimulai setelah rekaman jalan. Jaga rekaman tetap hidup sampai edit terakhir, screenshot, dan commit. Segel dengan `record --finish <id>`.
-- **Bundle (ada `bundle`):** tidak ada rekaman. Kumpulkan file sesi yang membangun dan merevisi entry, lalu bundle dengan flag run-record yang benar (lihat CHEATSHEET.md).
+- **Strict-transcripts (ada `record`):** mulai rekaman (`record --competition <slug> --source <repo>`) **sebelum** menulis kode apa pun. Bangun di sesi yang dimulai setelah rekaman jalan. Jaga rekaman tetap hidup sampai edit terakhir, screenshot, dan commit. Segel dengan `record --finish <id>`.
+- **Bundle (ada `bundle`):** tidak ada rekaman. Kumpulkan file sesi yang membangun dan merevisi entry, lalu bundle dengan flag run-record yang benar (lihat TOOLS.md).
 - **Metric/entry-link (misalnya postingan X):** entry-nya adalah postingan itu sendiri; repo hanya berisi alamat postingan (`POST.json`) + program yang menyalinnya ke output.
 
 ## 3. Bangun
 
 - Tulis semua kode segar di sesi yang direkam/dibundle — jangan membaca implementasi lama lalu menulis ulang. Baris yang isinya pernah dibaca dihitung "bacaan", bukan "buatan".
-- Jalankan server tes di shell terpisah. Matikan berdasarkan PID, **jangan pernah `pkill -f`** (pernah membunuh shell agent sendiri).
+- Jalankan server tes di shell terpisah. Matikan berdasarkan PID, **jangan pernah `pkill -f`**.
 - Uji seperti grader menguji: jalankan program dua kali dan pastikan output byte-identik (untuk entry deterministik).
 - Ambil screenshot seperti yang diminta kit (ukuran dan jumlahnya), dan lihat sendiri tiap screenshot sebelum submit.
 - Lakukan satu putaran revisi sungguhan setelah versi pertama jalan: perbaiki, uji ulang, commit lagi.
@@ -37,9 +37,9 @@ Kalau brief datang dari chat (bukan diketik user langsung di sesi builder), file
 
 ## 5. Check lokal, lalu submit
 
-- Jalankan check lokal dari kit (`check --kit . --repo <repo> --transcripts <bundle>` atau `check` sesuai jenis). Perbaiki semua yang gagal, bundle ulang, cek ulang.
+- Jalankan check lokal dari kit. Perbaiki semua yang gagal, bundle ulang, cek ulang.
 - Submit sekali saja. Submit terakhir sebelum deadline yang dihitung, dan entry yang sudah dinilai bisa berubah skornya kalau di-submit ulang — jangan submit ulang entry yang sudah dinilai.
-- Setelah submit, pantau status (`status --submission <id>`). Kalau ditolak dan masih boleh coba lagi, perbaiki dan submit ulang sebelum deadline.
+- Setelah submit, pantau status. Kalau ditolak dan masih boleh coba lagi, perbaiki dan submit ulang sebelum deadline.
 
 ## 6. Hasil dan klaim
 
