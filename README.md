@@ -69,13 +69,6 @@ Detail tiap langkah ada di `agent-kit/WORKFLOW.md`.
 - **Skill yang menentukan, bukan untung-untungan.** Tidak ada undian. Entry terbaik menurut metrik yang dipublikasikan yang menang.
 - **Entry adalah repo GitHub publik di satu commit, plus transkrip sesi AI yang menulisnya.** Transkrip itu anti-cheat: membuktikan agent kamu sendiri yang membangun entry itu. Transkrip tidak pernah dipublikasikan, bahkan untuk pemenang, dan rahasia dihapus sebelum disimpan.
 
-## Pelajaran yang terbukti (bukan teori)
-
-- **Cek bountynya benar-benar ada.** Pernah ada 3 bounty "baru" yang ternyata tidak ada (API 404). Verifikasi tiap slug ke endpoint requirements sebelum bicara ke siapa pun.
-- **Revisi itu bangun ulang, bukan edit.** Di bounty strict-transcripts, baris kode dihitung "buatan kamu" hanya kalau isinya belum pernah dibaca. Tiga kali revisi di repo lama gagal di angka 15–23%. Bangun di repo baru dari nol: lolos 90%.
-- **Pelajari pemenangnya dulu.** Juri hanya melihat screenshot + ringkasan singkat. Satu gambar yang mencolok mengalahkan aplikasi lengkap tapi generik.
-- **Jangan submit ulang entry yang sudah dinilai.** Submit terakhir sebelum deadline yang dihitung — skornya bisa naik, bisa turun.
-
 ## Tautan
 
 - make.fun: https://make.fun
